@@ -45,11 +45,9 @@ function Login({ onLogin }) {
       // Fetch all users from your current API
       const response = await fetch(scriptUrl);
       const allUsers = await response.json();
-      console.log('Fetched users:', allUsers);
       
       // Find the matching user by checking contact and password
       const user = allUsers.find(user => 
-        console.log('Checking user:', user.contact===email, user.Password===password) ||
         user.contact == email && user.Password === password
       );
       
@@ -123,9 +121,9 @@ function Login({ onLogin }) {
             required
             fullWidth
             id="email"
-            label="Email Address"
-            name="email"
-            autoComplete="email"
+            label="Mobile number or username"
+            name="contact"
+            autoComplete="contact"
             autoFocus
             value={email}
             onChange={(e) => setEmail(e.target.value)}
