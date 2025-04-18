@@ -103,7 +103,7 @@ export default function MilkSupplierCards() {
       }
       
       const data = await response.json();
-      console.log('Fetched suppliers:', data);
+
       
       // If we have suppliers data
       if (data && data.length > 0) {
@@ -116,10 +116,10 @@ export default function MilkSupplierCards() {
         
         // Filter suppliers if user is logged in
         const username = localStorage.getItem('userName');
-        console.log('Username:', username);
+
         if (username) {
           const filteredSuppliers = suppliersWithColors.filter(
-            supplier => console.log('Supplier:', supplier) || supplier.UserName === username
+            supplier =>  supplier.UserName === username
           );
           setMilkSuppliers(filteredSuppliers.length > 0 ? filteredSuppliers : suppliersWithColors);
         } else {
@@ -149,7 +149,6 @@ export default function MilkSupplierCards() {
       }
       
       const data = await response.json();
-      console.log('Fetched invoices:', data);
       
       if (data && data.length > 0) {
         setInvoices(data);
@@ -176,7 +175,6 @@ export default function MilkSupplierCards() {
         )
         .map(invoice => parseInt(invoice['Supplier ID']));
       
-      console.log('Submitted supplier IDs for today and current period:', submittedSupplierIds);
       
       // Filter out suppliers who have already submitted
       const filtered = milkSuppliers.filter(supplier => 
@@ -405,7 +403,7 @@ export default function MilkSupplierCards() {
                       color: supplier.textColor,
                       fontWeight: 'bold',
                       mt: 1,
-                      fontSize: { xs: '2rem', sm: '2rem' }
+                      fontSize: { xs: '2.3rem', sm: '2rem' }
                     }}
                   >
                     {supplier.Name}
