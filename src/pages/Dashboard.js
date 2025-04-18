@@ -292,7 +292,7 @@ export default function MilkSupplierCards() {
   }
   
   return (
-    <Container maxWidth="lg" sx={{ py: 4 }}>
+    <Container maxWidth="xl" sx={{ py: 4 }}>
       <Paper elevation={0} sx={{ p: 2, mb: 4, backgroundColor: 'transparent', textAlign: 'center' }}>
         <Typography variant="h3" component="h1" gutterBottom sx={{ color: '#3f51b5', fontWeight: 'bold' }}>
           🥛 दूध आपूर्तिकर्ता 
@@ -358,12 +358,13 @@ export default function MilkSupplierCards() {
           </Button>
         </Paper>
       ) : (
-        <Grid container spacing={3}>
+        <Grid container spacing={2}>
           {filteredSuppliers.map((supplier) => (
             <Grid item xs={6} md={4} key={supplier.ID}>
               <Card 
                 sx={{ 
-                  height: { xs: 140, sm: 180 },
+                  height: { xs: 190, sm: 200 },
+                  width: {xs:'155px', sm:'100%', md:'100%'},
                   display: 'flex', 
                   flexDirection: 'column',
                   transition: 'transform 0.3s, box-shadow 0.3s',
@@ -373,6 +374,7 @@ export default function MilkSupplierCards() {
                     boxShadow: 6,
                   },
                   borderRadius: 2,
+                  // padding: 2,
                   overflow: 'hidden',
                   backgroundColor: supplier.color
                 }}
@@ -390,7 +392,7 @@ export default function MilkSupplierCards() {
                     sx={{ 
                       color: supplier.textColor, 
                       fontWeight: 'bold',
-                      fontSize: { xs: '3.5rem', sm: '5rem' }
+                      fontSize: { xs: '4rem', sm: '5rem' }
                     }}
                   >
                     {supplier.ID}
@@ -402,8 +404,8 @@ export default function MilkSupplierCards() {
                     sx={{
                       color: supplier.textColor,
                       fontWeight: 'bold',
-                      mt: 2,
-                      fontSize: { xs: '1rem', sm: '1.5rem' }
+                      mt: 1,
+                      fontSize: { xs: '2rem', sm: '2rem' }
                     }}
                   >
                     {supplier.Name}
